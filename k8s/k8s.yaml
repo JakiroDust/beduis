@@ -17,6 +17,15 @@ spec:
         image: regfruit.azurecr.io/be:latest
         ports:
         - containerPort: 5000
+        resources:
+          requests:
+            cpu: '0'
+            memory: '0'
+          limits:
+            cpu: '0.5'
+            memory: 0.5G
+    imagePullSecrets:
+        - name: regsec
 ---
 apiVersion: v1
 kind: Service
